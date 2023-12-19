@@ -1,0 +1,145 @@
+:root {
+    --green: #33B667;
+    --hover-green: #43895f;
+    --gray: #ddd;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('../fonts/Inter-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('../fonts/Inter-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('../fonts/Inter-Black.ttf');
+    font-weight: 900;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body { 
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    background-color: var(--green);
+    padding: 20px 0;    
+}
+
+header h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+main {
+    padding-top: 40px;
+}
+
+main h2 {
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rounds {
+    margin-top: 50px;
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    padding: 25px 20px;
+}
+
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;    
+}
+
+.slider-header .navigation {
+    background-color: var(--green);
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color ease .3s;
+    border: none;
+    cursor: pointer;
+}
+
+.slider-header .navigation:hover {
+    background-color: var(--hover-green);
+}
+
+.slider-header .title {
+    text-align: center;
+}
+
+.slider-header h3 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.slider-header h4 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.navigation.prev img{
+    transform: scaleX(-1);
+}
+
+@media (min-width: 768px) { 
+    header {
+        padding: 24px 0;    
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    main {
+        padding-top: 180px;
+    }
+
+    main h2 {
+        font-size: 26px;
+    }
+
+    .container {
+        max-width: 610px;
+        padding: 0;
+    }
+
+    .rounds {
+        margin-top: 80px;
+        width: 340px;
+    }
+
+}
