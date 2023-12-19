@@ -1,4 +1,53 @@
+:root {
+    --green: #33B667;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('/fonts/Inter-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('/fonts/Inter-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('/fonts/Inter-Black.ttf');
+    font-weight: 900;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
+}
+
+body { 
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    background-color: var(--green);
+    padding: 20px 0;    
+}
+
+header h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) { 
+    header {
+        padding: 24px 0;    
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
 }
