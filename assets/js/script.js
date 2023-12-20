@@ -1,4 +1,6 @@
 const slider = document.getElementById("rounds-slider");
+const roundElement = document.getElementById("round-number");
+let roundNumber = 1;
 
 (async function getRounds() {
     try {
@@ -49,6 +51,7 @@ const slider = document.getElementById("rounds-slider");
                     100 * (index - currentSlide)
                 }%)`;
             });
+            roundElement.innerHTML = roundNumber;
             updateNavigationButtons();
         }
 
@@ -56,6 +59,7 @@ const slider = document.getElementById("rounds-slider");
             if (currentSlide === 0) {
                 return;
             }
+            roundNumber--;
             currentSlide--;
             moveSlide();
         });
@@ -64,6 +68,7 @@ const slider = document.getElementById("rounds-slider");
             if (currentSlide === maxSlide) {
                 return;
             }
+            roundNumber++;
             currentSlide++;
             moveSlide();
         });
