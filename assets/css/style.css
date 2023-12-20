@@ -123,16 +123,67 @@ main h2 {
 
 .slider {
     width: 100%;
-    height: 350px;
+    margin-top: 25px;
+    height: 260px;
     position: relative;
     overflow: hidden;
 }
 
 .slide {
     width: 100%;
-    height: 350px;
+    height: 100%;
     position: absolute;
-    transition: all 0.5s;
+    transition: all 0.5s;    
+}
+
+.game {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+.game:not(:last-child) {
+    border-bottom: 1px solid var(--gray);
+}
+
+.game .team {
+    display: flex;
+    align-items: center;
+}
+
+.game .team .name,
+.game .team .score {
+    font-weight: 700;
+}
+
+.game .team .name {
+    font-size: 12px;
+}
+
+.game .team.home .logo {
+    margin-right: 8px;
+}
+
+.game .team.away .logo {
+    margin-left: 8px;
+}
+
+.game .team .score {
+    font-size: 14px;
+}
+
+.game .team.home .score {
+    margin-left: 12px;
+}
+
+.game .team.away .score {
+    margin-right: 12px;
+}
+
+.game .versus {
+    margin: 0 10px;
+    height: 10px;
 }
 
 @media (min-width: 768px) { 
@@ -160,6 +211,40 @@ main h2 {
     .rounds {
         margin-top: 80px;
         width: 340px;
+    }
+
+    .slider {
+        margin-top: 50px;
+        height: 290px;
+    }
+    
+    .game {
+        padding: 16px 0;
+    }
+
+    .game .team.home .logo {
+        margin-right: 10px;
+    }
+
+    .game .team.away .logo {
+        margin-left: 10px;
+    }
+
+    .game .team .score {
+        font-size: 15px;
+    }
+
+    .game .team.home .score {
+        margin-left: 34px;
+    }
+
+    .game .team.away .score {
+        margin-right: 34px;
+    }
+
+    .game .versus {
+        margin: 0 14px;
+        height: 12px;
     }
 
 }
