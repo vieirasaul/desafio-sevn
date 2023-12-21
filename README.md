@@ -17,6 +17,6 @@ https://vieirasaul.github.io/desafio-sevn/
 1. Clone o repositório:
 
    ```bash
-   git clone [https://github.com/seu-usuario/seu-projeto.git](https://github.com/vieirasaul/desafio-sevn.git)
+   git clone https://github.com/vieirasaul/desafio-sevn.git
    
 2. Abra o arquivo `index.html` no seu navegador favorito
