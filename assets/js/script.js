@@ -18,6 +18,31 @@ function showError(message) {
     roundsSection.style.display = "none";
 }
 
+function gameTemplate(
+    teamHomeId,
+    teamHomeName,
+    teamHomeScore,
+    teamAwayId,
+    teamAwayName,
+    teamAwayScore
+) {
+    return `                    
+            <div class="game">
+            <div class="team home">
+            <img class="logo" src="assets/img/${teamHomeId}.png" alt="Logo do ${teamHomeName}">
+            <div class="name">${teamHomeName}</div>
+            <div class="score">${teamHomeScore}</div>
+            </div>
+            <img class="versus" src="assets/img/versus.svg" alt="versus X icon">
+            <div class="team away">
+            <div class="score">${teamAwayScore}</div>
+            <div class="name">${teamAwayName}</div>
+            <img class="logo" src="assets/img/${teamAwayId}.png" alt="Logo do ${teamAwayName}">
+            </div>
+            </div>
+            `;
+}
+
 const results = [];
 
 async function getRounds() {
@@ -44,21 +69,14 @@ window.onload = async () => {
         round.games.map(function (game) {
             slideElement.insertAdjacentHTML(
                 "beforeend",
-                `                    
-                <div class="game">
-                <div class="team home">
-                <img class="logo" src="assets/img/${game.team_home_id}.png" alt="Logo do ${game.team_home_name}">
-                <div class="name">${game.team_home_name}</div>
-                <div class="score">${game.team_home_score}</div>
-                </div>
-                <img class="versus" src="assets/img/versus.svg" alt="versus X icon">
-                <div class="team away">
-                <div class="score">${game.team_away_score}</div>
-                <div class="name">${game.team_away_name}</div>                            
-                <img class="logo" src="assets/img/${game.team_away_id}.png" alt="Logo do ${game.team_away_name}">
-                </div>
-                </div>
-                `
+                gameTemplate(
+                    game.team_home_id,
+                    game.team_home_name,
+                    game.team_home_score,
+                    game.team_away_id,
+                    game.team_away_name,
+                    game.team_away_score
+                )
             );
         });
     });
