@@ -1,5 +1,7 @@
 const slider = document.getElementById("rounds-slider");
 const roundElement = document.getElementById("round-number");
+const errorElement = document.getElementById("error");
+const errorMessage = document.getElementById("error-message");
 let roundNumber = 1;
 
 (async function getRounds() {
@@ -88,6 +90,7 @@ let roundNumber = 1;
 
         updateNavigationButtons();
     } catch (error) {
-        console.error(`Erro: ${error.message}`);
+        errorElement.style.display = "block";
+        errorMessage.innerHTML = `${error.name} - ${error.message}`;
     }
 })();
