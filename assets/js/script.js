@@ -1,13 +1,25 @@
+const roundsSection = document.getElementById("rounds");
 const slider = document.getElementById("rounds-slider");
 const roundElement = document.getElementById("round-number");
 const errorElement = document.getElementById("error");
 const errorMessage = document.getElementById("error-message");
+const loader = document.getElementById("loader");
 let roundNumber = 1;
+
+function toggleLoader() {
+    if (loader.style.display == "flex") {
+        loader.style.display = "none";
+    } else {
+        loader.style.display = "flex";
+    }
+}
 
 (async function getRounds() {
     try {
+        toggleLoader();
         const response = await fetch("https://sevn-pleno-esportes.deno.dev");
         const rounds = await response.json();
+        toggleLoader();
 
         rounds.map(function (round) {
             let slideElement = document.createElement("div");
@@ -90,7 +102,9 @@ let roundNumber = 1;
 
         updateNavigationButtons();
     } catch (error) {
-        errorElement.style.display = "block";
+        errorElement.style.display = "flex";
         errorMessage.innerHTML = `${error.name} - ${error.message}`;
+        toggleLoader();
+        roundsSection.style.display = "none";
     }
 })();

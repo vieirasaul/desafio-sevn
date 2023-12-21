@@ -3,6 +3,7 @@
     --hover-green: #43895f;
     --gray: #ddd;
     --error: #c92100;
+    --dark-gray: #1c1c1c;
 }
 
 @font-face {
@@ -61,6 +62,7 @@ main h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .rounds {
@@ -191,15 +193,83 @@ main h2 {
 #error { 
     display: none;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 50%;
+    top: 150px;
+    width: 270px;
+    font-size: 14px;
+    transform: translateX(-50%);
     background-color: var(--error);
     color: #fff;
     padding: 20px;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #error p { 
     margin-bottom: 20px;
+}
+
+#loader {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%)translateY(-50%);
+    background-color: var(--dark-gray);
+    align-items: center;
+    justify-content: center;
+}
+
+#loader .football {
+    width: 150px;
+    height: 150px;
+}
+
+#loader .football svg path {
+    animation-duration: 1s;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+    color: #26a380;
+}
+
+#loader .football svg path.path-7 {
+    animation-delay: -1s
+}
+
+#loader .football svg path.path-6 {
+    animation-delay: -.875s
+}
+
+#loader .football svg path.path-5 {
+    animation-delay: -.75s
+}
+
+#loader .football svg path.path-4 {
+    animation-delay: -.625s
+}
+
+#loader .football svg path.path-3 {
+    animation-delay: -.5s
+}
+
+#loader .football svg path.path-2 {
+    animation-delay: -.375s
+}
+
+#loader .lofootballader svg path.path-1 {
+    animation-delay: -.25s
+}
+
+#loader .football svg path.path-0 {
+    animation-delay: -.125s
+}
+
+@keyframes pulse {
+    0%     { opacity: .1; }
+    30%    { opacity: .8; }
+    100%   { opacity: .1; }
 }
 
 @media (min-width: 768px) { 
@@ -261,6 +331,17 @@ main h2 {
     .game .versus {
         margin: 0 14px;
         height: 12px;
+    }
+
+    #error {
+        width: 450px;
+        min-height: 200px;
+        font-size: 16px;        
+    }
+
+    #loader .football {
+        width: 200px;
+        height: 200px;
     }
 
 }
